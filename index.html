@@ -74,11 +74,39 @@
                 </div>
                 <div class="col-md-4">
                     <label for="">Fee</label>
-                    <input type="number"  class="form-control" placeholder="Fee">
+                    <input type="number"  class="form-control" placeholder="0.00 CAD" min="0" step="0.10">
                 </div>
                 <div class="col-md-4">
                     <label for="">Due Date</label>
                     <input type="date"  class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <label for="">Discount</label>
+                    <input type="number"  class="form-control" placeholder="0.00 CAD" min="0" step="0.10">
+                </div>
+                <div class="col-md-4">
+                    <label for="">Payment Type</label>
+                    <select name="" id="" class="form-control">
+                        <option value="" selected>Select Payment type</option>
+                        <option value="cash" >Cash</option>
+                        <option value="debit" >Debit</option>
+                        <option value="credit" >Credit</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="">Approved By</label>
+                    <select name="" id="" class="form-control">
+                        <option value="" selected>Select Employee</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-info btn-block mt-4 p-2"> Submit</button>
                 </div>
             </div>
         </form>
