@@ -1,1 +1,7 @@
-console.log("ready");
+$(document).ready(function() {
+
+    console.log("Hello World");
+
+
+    
+});

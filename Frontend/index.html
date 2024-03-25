@@ -19,7 +19,7 @@
 <body>
     
     <div class="container">
-        <form action="">
+        <form action="" method="post" class="gym_membership_form">
             <h1>Gym Membership Form</h1>
             <!-- Personal Details -->
             <div class="border-bottom mt-4">
@@ -28,29 +28,29 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label for="">First Name</label>
-                    <input type="text" class="form-control" placeholder="First Name">
+                    <input type="text" class="form-control gym_membership_fname" placeholder="First Name">
                 </div>
                 <div class="col-md-4">
                     <label for="">Last Name</label>
-                    <input type="text"  class="form-control" placeholder="Last Name">
+                    <input type="text"  class="form-control gym_membership_lname" placeholder="Last Name">
                 </div>
                 <div class="col-md-4">
                     <label for="">Phone</label>
-                    <input type="tel" class="form-control" placeholder="Phone">
+                    <input type="tel" class="form-control gym_membership_phone" placeholder="Phone">
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label for="">Date Of Birth</label>
-                    <input type="date" class="form-control" >
+                    <input type="date" class="form-control gym_membership_dob" >
                 </div>
                 <div class="col-md-4">
                     <label for="">Age</label>
-                    <input type="number"  class="form-control" placeholder="Age">
+                    <input type="number"  class="form-control gym_membership_age" placeholder="Age">
                 </div>
                 <div class="col-md-4">
                     <label for="">Address</label>
-                    <textarea name="" id="" class="form-control" cols="1" rows="1" placeholder="Address"></textarea>
+                    <textarea name="" id="" class="form-control gym_membership_address" cols="1" rows="1" placeholder="Address"></textarea>
                 </div>
             </div>
 
@@ -61,44 +61,44 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label for="">Location</label>
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control gym_membership_location">
                         <option value="" selected>Select Location</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label for="">Start Date</label>
-                    <input type="date"  class="form-control" placeholder="">
+                    <input type="date"  class="form-control gym_membership_st_date" placeholder="">
                 </div>
                 <div class="col-md-4">
                     <label for="">End Date</label>
-                    <input type="date" class="form-control" placeholder="">
+                    <input type="date" class="form-control gym_membership_end_date" placeholder="">
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label for="">Plan</label>
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control gym_membership_plan">
                         <option value="" selected>Select Plan</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label for="">Fee</label>
-                    <input type="number"  class="form-control" placeholder="0.00 CAD" min="0" step="0.10">
+                    <input type="number"  class="form-control gym_membership_fee" placeholder="0.00 CAD" min="0" step="0.10">
                 </div>
                 <div class="col-md-4">
                     <label for="">Due Date</label>
-                    <input type="date"  class="form-control" placeholder="">
+                    <input type="date"  class="form-control gym_membership_due_date" placeholder="">
                 </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label for="">Discount</label>
-                    <input type="number"  class="form-control" placeholder="0.00 CAD" min="0" step="0.10">
+                    <input type="number"  class="form-control gym_membership_discount" placeholder="0.00 CAD" min="0" step="0.10">
                 </div>
                 <div class="col-md-4">
                     <label for="">Payment Type</label>
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control gym_membership_payment_type">
                         <option value="" selected>Select Payment type</option>
                         <option value="cash" >Cash</option>
                         <option value="debit" >Debit</option>
@@ -108,14 +108,14 @@
 
                 <div class="col-md-4">
                     <label for="">Approved By</label>
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control gym_membership_approved_by">
                         <option value="" selected>Select Employee</option>
                     </select>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-info btn-block mt-4 p-2"> Submit</button>
+                    <button type="submit" class="btn btn-info btn-block mt-4 p-2 gym_membership_submit_btn"> Submit</button>
                 </div>
             </div>
         </form>
