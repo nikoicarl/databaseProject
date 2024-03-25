@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     //Submit form
-    $('.gym_membership_submit_btn').submit(function(e){
+    $('.gym_membership_form').submit(function(e){
         e.preventDefault();
         
         alert("submitting");
