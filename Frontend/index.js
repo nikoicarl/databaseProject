@@ -3,8 +3,6 @@ $(document).ready(function() {
     //Submit form
     $('.gym_membership_form').submit(function(e){
         e.preventDefault();
-        
-        alert("submitting");
         //Get data from html
         let fname = $('.gym_membership_fname', this).val();
         let lname = $('.gym_membership_lname', this).val();
@@ -31,6 +29,7 @@ $(document).ready(function() {
                 type: "POST",
                 url: '/insertMembership',
                 async: false,
+                crossOriginIsolated: false,
                 data: {
                     "fname":fname,
                     "lname": lname,
