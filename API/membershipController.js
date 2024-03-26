@@ -5,6 +5,6 @@ module.exports = function (app, dataBase) {
 
     app.post('/insertMembership', function (request, response) {
         var data = request.body;
-        console.log(data);
+        response.json(data);
     });
 }

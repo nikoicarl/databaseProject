@@ -1,5 +1,28 @@
 $(document).ready(function () {
 
+    // Fetch Employee Data
+    var settings = {
+        "url": "http://localhost:5010/getEmployee",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "Cache-Control": "no-cache",
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            "Connection": "keep-alive"
+        },
+    };
+
+    // Response from API
+    $.ajax(settings).done(function (response) {
+        let employee = response;
+        let employee_list = '<option value="" >Select Employee</option>';
+        employee.forEach(element => {
+            employee_list += '<option value="' + element.id + '">' + element.fname + ' ' + element.lname + '</option>';
+        });
+        $('.gym_membership_approved_by').html(employee_list);
+    });
+
     //Submit form
     $('.gym_membership_form').submit(function (e) {
         e.preventDefault();
@@ -23,15 +46,16 @@ $(document).ready(function () {
         $('.gym_membership_submit_btn').attr('disabled');
 
         setTimeout(function () {
-            //Start ajax
+
+            // insert data into membership table
             $.ajax({
                 type: "POST",
                 crossDomain: true,
                 url: 'http://localhost:5010/insertMembership',
                 async: true,
-                headers :{
+                headers: {
                     "accept": "application/json",
-                    "Access-Control-Allow-Origin":"*"
+                    "Access-Control-Allow-Origin": "*"
                 },
                 data: {
                     "fname": fname,
@@ -61,6 +85,8 @@ $(document).ready(function () {
                     $('.gym_membership_submit_btn').removeAttr('disabled');
                 }
             });
+
+            
         }, 500);
     });
 });
