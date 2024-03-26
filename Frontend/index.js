@@ -18,11 +18,10 @@ $(document).ready(function () {
         let employee = response;
         let employee_list = '<option value="" >Select Employee</option>';
         employee.forEach(element => {
-            employee_list += '<option value="' + element.id + '">' + element.fname + ' ' + element.lname + '</option>';
+            employee_list += '<option value="' + element.employeeID + '">' + element.fname + ' ' + element.lname + '</option>';
         });
         $('.gym_membership_approved_by').html(employee_list);
     });
-
 
     // Fetch Location Data
     var settings = {
@@ -42,7 +41,7 @@ $(document).ready(function () {
         let location = response;
         let location_list = '<option value="">Select Location</option>';
         location.forEach(element => {
-            location_list += '<option value="' + element.id + '">' + element.fname + ' ' + element.lname + '</option>';
+            location_list += '<option value="' + element.locationID+ '">' + element.street_number + ' ' + element.street_name + ' -(Phone) ' + element.phone_number + '</option>';
         });
         $('.gym_membership_location').html(location_list);
     });
@@ -74,9 +73,8 @@ $(document).ready(function () {
             // insert data into membership table
             $.ajax({
                 type: "POST",
-                crossDomain: true,
                 url: 'http://localhost:5010/insertMembership',
-                async: true,
+                async: false,
                 headers: {
                     "accept": "application/json",
                     "Access-Control-Allow-Origin": "*"
@@ -90,7 +88,7 @@ $(document).ready(function () {
                     "address": address,
                     "location": location,
                     "start_date": start_date,
-                    "end_date,": end_date,
+                    "end_date": end_date,
                     "plan": plan,
                     "fee": fee,
                     "due_date": due_date,
@@ -105,8 +103,8 @@ $(document).ready(function () {
                     } else {
                         alert('success', data.message, 'gym_membership_alert');
                     }
-                    $('.gym_membership_submit_btn').html('Submit');
-                    $('.gym_membership_submit_btn').removeAttr('disabled');
+                    // clear form data
+                    $('.gym_membership_form').trigger('reset');
                 }
             });
 
