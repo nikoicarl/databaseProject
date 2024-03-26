@@ -23,6 +23,30 @@ $(document).ready(function () {
         $('.gym_membership_approved_by').html(employee_list);
     });
 
+
+    // Fetch Location Data
+    var settings = {
+        "url": "http://localhost:5010/getLocation",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "Cache-Control": "no-cache",
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            "Connection": "keep-alive"
+        },
+    };
+
+    // Response from API
+    $.ajax(settings).done(function (response) {
+        let location = response;
+        let location_list = '<option value="">Select Location</option>';
+        location.forEach(element => {
+            location_list += '<option value="' + element.id + '">' + element.fname + ' ' + element.lname + '</option>';
+        });
+        $('.gym_membership_location').html(location_list);
+    });
+
     //Submit form
     $('.gym_membership_form').submit(function (e) {
         e.preventDefault();

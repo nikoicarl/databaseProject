@@ -1,13 +1,14 @@
 // Dependencies
-var express = require("express");
-var cors = require("cors");
-var mysql = require("mysql");
-var bodyParser = require("body-parser");
-var app = express();
+const express = require("express");
+const cors = require("cors");
+const mysql = require("mysql");
+const bodyParser = require("body-parser");
+const app = express();
 
-var dbConnect = require('./dbConnect.js');
-var membershipController = require('./membershipController.js');
-var employeeFetchController = require('./employeeFetchController.js');
+const dbConnect = require('./dbConnect.js');
+const membershipController = require('./membershipController.js');
+const employeeFetchController = require('./employeeFetchController.js');
+const locationFetchController = require("./locationFetchController.js");
 
 // Use Cors
 app.use(express.json());
@@ -18,11 +19,12 @@ const corsOptions ={
 app.use(cors(corsOptions))
 
 // database connection
-var dataBase = dbConnect(mysql);
+const dataBase = dbConnect(mysql);
 
 // include controller
 membershipController(app, dataBase);
 employeeFetchController(app, dataBase);
+locationFetchController(app, dataBase);
 
 
 app.listen(5010,function()
