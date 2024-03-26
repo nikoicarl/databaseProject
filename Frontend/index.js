@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     //Submit form
-    $('.gym_membership_form').submit(function(e){
+    $('.gym_membership_form').submit(function (e) {
         e.preventDefault();
         //Get data from html
         let fname = $('.gym_membership_fname', this).val();
@@ -20,18 +20,21 @@ $(document).ready(function() {
         let payment_type = $('.gym_membership_payment_type', this).val();
         let approved_by = $('.gym_membership_approved_by', this).val();
 
-        $('.gym_membership_submit_btn').html('<span class="bx bx-loader-alt spinner"></span>');
         $('.gym_membership_submit_btn').attr('disabled');
 
-        setTimeout(function(){
+        setTimeout(function () {
             //Start ajax
             $.ajax({
                 type: "POST",
-                url: '/insertMembership',
-                async: false,
-                crossOriginIsolated: false,
+                crossDomain: true,
+                url: 'http://localhost:5010/insertMembership',
+                async: true,
+                headers :{
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin":"*"
+                },
                 data: {
-                    "fname":fname,
+                    "fname": fname,
                     "lname": lname,
                     "phone": phone,
                     "dob": dob,
@@ -47,7 +50,7 @@ $(document).ready(function() {
                     "payment_type": payment_type,
                     "approved_by": approved_by
                 },
-                success:function(data) {
+                success: function (data) {
                     if (data.type == "error") {
                         alert('danger', data.message, 'gym_membership_alert');
                         console.log(data.message);
