@@ -98,10 +98,9 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     if (data.type == "error") {
-                        alert('danger', data.message, 'gym_membership_alert');
-                        console.log(data.message);
+                        alert('An error has occured. Please try again');
                     } else {
-                        alert('success', data.message, 'gym_membership_alert');
+                        alert('A new member has been added successfully');
                     }
                     // clear form data
                     $('.gym_membership_form').trigger('reset');
