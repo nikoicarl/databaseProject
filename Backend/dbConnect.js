@@ -1,3 +1,4 @@
+// Database connect function
 module.exports = function dataBase(mysql) {
     const dbcon = mysql.createConnection({
         host     : 'localhost',
