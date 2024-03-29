@@ -10,7 +10,7 @@ const dbConnect = require('./dbConnect.js');
 const membershipController = require('./membershipController.js');
 const employeeFetchController = require('./employeeFetchController.js');
 const locationFetchController = require("./locationFetchController.js");
-const allMembers = require("./membershipTableFetchController.js");
+const getAllMembers = require("./membershipTableFetchController.js");
 
 // Use Cors
 app.use(express.json());
@@ -31,7 +31,7 @@ const dataBase = dbConnect(mysql);
 membershipController(app, dataBase);
 employeeFetchController(app, dataBase);
 locationFetchController(app, dataBase);
-allMembers(app, dataBase);
+getAllMembers(app, dataBase);
 
 
 // start server
