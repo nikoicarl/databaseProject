@@ -98,7 +98,7 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     if (data.type == "error") {
-                        alert('An error has occured. Please try again');
+                        alert(data.message).toString();
                     } else {
                         alert('A new member has been added successfully');
                     }
