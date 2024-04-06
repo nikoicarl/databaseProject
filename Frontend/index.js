@@ -96,7 +96,7 @@ $(document).ready(function () {
                     "payment_type": payment_type,
                     "approved_by": approved_by
                 },
-                success: function (data) {
+                success: function (data) {r
                     if (data.type == "error") {
                         alert(data.message).toString();
                     } else {
