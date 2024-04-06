@@ -46,6 +46,48 @@ $(document).ready(function () {
         $('.gym_membership_location').html(location_list);
     });
 
+
+    // Fetch all members Data
+    var settings = {
+        "url": "http://localhost:5010/getAllMembers",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "Cache-Control": "no-cache",
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            "Connection": "keep-alive"
+        },
+    };
+
+    // Response from API
+    $.ajax(settings).done(function (response) {
+        let getAllMembersData = response;
+        console.log(getAllMembersData);
+        // draw html table with data
+        let html = '';
+        getAllMembersData.forEach(element => {
+            html += '<tr>';
+            html += '<td>' + element.memberID + '</td>';
+            html += '<td>' + element.fname + ' ' + element.lname + '</td>';
+            html += '<td>' + element.phone + '</td>';
+            html += '<td>' + element.dob + '</td>';
+            html += '<td>' + element.age + '</td>';
+            html += '<td>' + element.address + '</td>';
+            html += '<td>' + element.location + '</td>';
+            html += '<td>' + element.start_date + '</td>';
+            html += '<td>' + element.end_date + '</td>';
+            html += '<td>' + element.plan + '</td>';
+            html += '<td>' + element.fee + '</td>';
+            html += '<td>' + element.due_date + '</td>';
+            html += '<td>' + element.discount + '</td>';
+            html += '<td>' + element.payment_type + '</td>';
+            html += '<td>' + element.approved_by + '</td>';
+            html += '</tr>';
+        });
+        $('.gym_membership_table_tbody').html(html);
+    });
+
     //Submit form
     $('.gym_membership_form').submit(function (e) {
         e.preventDefault();

@@ -16,11 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Membership Form INFO 2312 </title>
 </head>
-<body>
+<body >
     
     <div class="container">
-        <form action="/insertMembership" class="gym_membership_form">
-            <h1>Gym Membership Form</h1>
+        <form action="/insertMembership" class="gym_membership_form" >
+            <div class="container" style="display: none;">
+                <h1>Gym Membership Form</h1>
             <!-- Personal Details -->
             <div class="border-bottom mt-4">
                 <h4>Personal Details</h4>
@@ -89,6 +90,7 @@
 
             <!-- View all Members -->
             <button class = "btn btn-primary" >Click to view Table</button>
+            </div>
 
 
             <!-- View All Members Data table -->
@@ -111,10 +113,7 @@
                         <th>Due Date</th>
                     </tr>
                 </thead>
-                <tbody class="gym_all_members_datatable_tbody">
-                    <tr>
-                        <td></td>
-                    </tr>
+                <tbody class="gym_membership_table_tbody">
                 </tbody>
                 <tfoot>
                     <tr>
