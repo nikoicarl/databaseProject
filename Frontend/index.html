@@ -20,7 +20,7 @@
     
     <div class="container">
         <form action="/insertMembership" class="gym_membership_form" >
-            <div class="container" style="display: none;">
+            <div class="container">
                 <h1>Gym Membership Form</h1>
             <!-- Personal Details -->
             <div class="border-bottom mt-4">
@@ -88,20 +88,49 @@
                 </div>
             </div>
 
-            <!-- View all Members -->
-            <button class = "btn btn-primary" >Click to view Table</button>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <label for="">Discount</label>
+                    <input type="number"  class="form-control gym_membership_discount" placeholder="0.00 CAD" min="0" step="0.10">
+                </div>
+                <div class="col-md-4">
+                    <label for="">Payment Type</label>
+                    <select name="" id="" class="form-control gym_membership_payment_type">
+                        <option value="" selected>Select Payment type</option>
+                        <option value="cash" >Cash</option>
+                        <option value="debit" >Debit</option>
+                        <option value="credit" >Credit</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="">Approved By</label>
+                    <select name="" id="" class="form-control gym_membership_approved_by"></select>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-info btn-block mt-4 p-2 gym_membership_submit_btn"> Submit</button>
+                </div>
             </div>
 
+            <!-- Gym Details -->
+            <div class="border-bottom mt-5">
+                <h4>All Members</h4>
+            </div>
+
+            <div class="container mt-4">
 
             <!-- View All Members Data table -->
-            <table class="table table-light gym_all_members_datatable table-striped table-responsive">
+            <table style="white-space: nowrap" class="table table-light gym_all_members_datatable table-striped table-responsive">
                 <thead class="thead-dark ">
                     <tr>
+                        <th>#</th>
                         <th>Member</th>
                         <th>Phone</th>
                         <th>Date Of Birth</th>
                         <th>Address</th>
-                        <th>Type</th>
+                        <th>Member Type</th>
                         <th>Age</th>
                         <th>Approved By</th>
                         <th>Start Date</th>
@@ -115,34 +144,6 @@
                 </thead>
                 <tbody class="gym_membership_table_tbody"></tbody>
             </table>
-            
-
-            <div class="container" style="display: none;">
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <label for="">Discount</label>
-                        <input type="number"  class="form-control gym_membership_discount" placeholder="0.00 CAD" min="0" step="0.10">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="">Payment Type</label>
-                        <select name="" id="" class="form-control gym_membership_payment_type">
-                            <option value="" selected>Select Payment type</option>
-                            <option value="cash" >Cash</option>
-                            <option value="debit" >Debit</option>
-                            <option value="credit" >Credit</option>
-                        </select>
-                    </div>
-    
-                    <div class="col-md-4">
-                        <label for="">Approved By</label>
-                        <select name="" id="" class="form-control gym_membership_approved_by"></select>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-info btn-block mt-4 p-2 gym_membership_submit_btn"> Submit</button>
-                    </div>
-                </div>
             </div>
         </form>
     </div>    

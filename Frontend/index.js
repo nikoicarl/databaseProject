@@ -60,17 +60,17 @@ $(document).ready(function () {
         },
     };
 
-    // Response from API
     $.ajax(settings).done(function (response) {
         let getAllMembersData = response;
         // draw html table with data
         let html = '';
-        getAllMembersData.forEach(element => {
+        getAllMembersData.forEach((element, index) => {
             const dob = new Date(element.dob).toLocaleDateString();
             const enddate = new Date(element.end_date).toLocaleDateString();
             const startdate = new Date(element.start_date).toLocaleDateString();
             const due_date = new Date(element.due_date).toLocaleDateString();
             html += '<tr>';
+            html += '<td>' + (index + 1) + '</td>';
             html += '<td>' + element.member_fname + ' ' + element.member_lname + '</td>';
             html += '<td>' + element.phone + '</td>';
             html += '<td>' + dob + '</td>';
@@ -89,6 +89,7 @@ $(document).ready(function () {
         });
         $('.gym_membership_table_tbody').html(html);
     });
+    
 
     //Submit form
     $('.gym_membership_form').submit(function (e) {
