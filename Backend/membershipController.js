@@ -76,7 +76,7 @@ module.exports = function (app, dataBase) {
                                         } else {
                                             jsonData = {
                                                 'type': 'success',
-                                                'message': 'Membership has been added successfully!'
+                                                'message': 'A new Member has been added!'
                                             };
                                             response.json(jsonData);
                                         }

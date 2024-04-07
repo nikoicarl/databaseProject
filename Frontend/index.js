@@ -63,26 +63,25 @@ $(document).ready(function () {
     // Response from API
     $.ajax(settings).done(function (response) {
         let getAllMembersData = response;
-        console.log(getAllMembersData);
         // draw html table with data
         let html = '';
         getAllMembersData.forEach(element => {
             html += '<tr>';
-            html += '<td>' + element.memberID + '</td>';
-            html += '<td>' + element.fname + ' ' + element.lname + '</td>';
+            html += '<td>' + element.member_fname + ' ' + element.member_lname + '</td>';
             html += '<td>' + element.phone + '</td>';
             html += '<td>' + element.dob + '</td>';
             html += '<td>' + element.age + '</td>';
             html += '<td>' + element.address + '</td>';
-            html += '<td>' + element.location + '</td>';
+            html += '<td>' + element.membership_type + '</td>';
+            html += '<td>' + element.age + '</td>';
+            html += '<td>' + element.employee_fname + ' ' + element.employee_lname + '</td>';
             html += '<td>' + element.start_date + '</td>';
             html += '<td>' + element.end_date + '</td>';
-            html += '<td>' + element.plan + '</td>';
-            html += '<td>' + element.fee + '</td>';
-            html += '<td>' + element.due_date + '</td>';
             html += '<td>' + element.discount + '</td>';
+            html += '<td>' +'$'+ element.amount + '</td>';
             html += '<td>' + element.payment_type + '</td>';
-            html += '<td>' + element.approved_by + '</td>';
+            html += '<td>' + element.invoice_number + '</td>';
+            html += '<td>' + element.due_date + '</td>';
             html += '</tr>';
         });
         $('.gym_membership_table_tbody').html(html);
