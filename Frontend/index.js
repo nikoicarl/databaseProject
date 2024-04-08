@@ -141,7 +141,7 @@ $(document).ready(function () {
                     "payment_type": payment_type,
                     "approved_by": approved_by
                 },
-                success: function (data) {r
+                success: function (data) {
                     if (data.type == "error") {
                         alert(data.message).toString();
                     } else {
